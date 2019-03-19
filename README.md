@@ -14,7 +14,7 @@
 
 **用户表**
 
-![img](file:///C:/Users/asus/AppData/Local/Temp/msohtmlclip1/01/clip_image004.jpg)
+![img](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/%E7%94%A8%E6%88%B7%E8%A1%A8.png)
 
  
 
@@ -24,19 +24,19 @@
 
 **图书表**
 
-![img](file:///C:/Users/asus/AppData/Local/Temp/msohtmlclip1/01/clip_image006.jpg)
+![img](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/%E5%9B%BE%E4%B9%A6%E8%A1%A8.png)
 
 **用户类型表**
 
-![img](file:///C:/Users/asus/AppData/Local/Temp/msohtmlclip1/01/clip_image008.jpg)
+![img](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/%E7%94%A8%E6%88%B7%E7%B1%BB%E5%9E%8B%E8%A1%A8.png)
 
 **图书类型表**
 
-![img](file:///C:/Users/asus/AppData/Local/Temp/msohtmlclip1/01/clip_image010.jpg)
+![img](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/%E5%9B%BE%E4%B9%A6%E7%B1%BB%E5%9E%8B%E8%A1%A8.png)
 
 **用户登陆表**
 
-![img](file:///C:/Users/asus/AppData/Local/Temp/msohtmlclip1/01/clip_image012.jpg)
+![img](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/%E7%94%A8%E6%88%B7%E7%99%BB%E9%99%86%E8%A1%A8.png)
 
  
 
@@ -56,19 +56,18 @@
 
 E-R图：
 
-![img](file:///C:/Users/asus/AppData/Local/Temp/msohtmlclip1/01/clip_image014.jpg)
+![img](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/E-R%E5%9B%BE.png)
 
  
 
  ### 部分功能展示
 
-![1553007032690](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\1553007032690.png)
+![1553007032690](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA1.jpg)
 
-![1553007000550](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\1553007000550.png)
+![1553007000550](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA2.jpg)
 
-![1553007068017](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\1553007068017.png)
+![1553007068017](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA3.jpg)
 
-![1553007101114](C:\Users\asus\AppData\Roaming\Typora\typora-user-images\1553007101114.png)
 
 ### 心得体会
 
