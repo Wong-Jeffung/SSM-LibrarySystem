@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.library.mapper.ReaderDao">
+	<select id="queryReader" resultType="Reader">
+		select * from reader
+		<where>
+			<if test="name != null and name != ''">
+			name like "%"#{name}"%" 
+			</if>
+			<if test="type != null and type != ''">
+			and type = #{type} 
+			</if>
+			<if test="number != null and number != ''">
+			and number like "%"#{number}"%" 
+			</if>
+		</where>
+	</select>
+	
+	<select id="queryReaderByNumber" parameterType="String" resultType="Reader">
+		select * from reader where number = #{number}
+	</select>
+	
+	<select id="queryAllReaderType" resultType="ReaderType">
+		select * from readertype
+	</select>
+	
+	<select id="updateReaderByNumber" parameterType="Reader">
+	update reader
+		<set>
+			<if test="name != null and name != ''">
+				name=#{name},
+			</if>
+			<if test="type != null and type != ''">
+				type=#{type},
+			</if>
+			<if test="number != null and number != ''">
+				number=#{number},
+			</if>
+			<if test="sex != null and sex != ''">
+				sex=#{sex},
+			</if>
+			<if test="workunit != null and workunit != ''">
+				workunit=#{workunit},
+			</if>
+			<if test="homeaddress != null and homeaddress != ''">
+				homeaddress=#{homeaddress},
+			</if>
+			<if test="tel != null and tel != ''">
+				tel=#{tel},
+			</if>
+			<if test="email != null and email != ''">
+				email=#{email},
+			</if>
+			<if test="remark != null and remark != ''">
+				remark=#{remark},
+			</if>
+		</set>
+		<where>
+			number=#{number}
+		</where>
+	</select>
+	
+	<insert id="addReader" parameterType="Reader">
+	insert into reader(
+		<if test="type != null and type != ''">type,</if>
+		<if test="name != null and name != ''">name,</if>
+		<if test="number != null and number != ''">number,</if>
+		<if test="sex != null and sex != ''">sex,</if>
+		<if test="workunit != null and workunit != ''">workunit,</if>
+		<if test="homeaddress != null and homeaddress != ''">homeaddress,</if>
+		<if test="tel != null and tel != ''">tel,</if>
+		<if test="email != null and email != ''">email,</if>
+		<if test="remark != null and remark != ''">remark,</if>
+		<if test="createtime != null and createtime != ''">createtime</if>
+        ) 
+        values (
+		<if test="type != null and type != ''">#{type},</if>
+		<if test="name != null and name != ''">#{name},</if>
+		<if test="number != null and number != ''">#{number},</if>
+		<if test="sex != null and sex != ''">#{sex},</if>
+		<if test="workunit != null and workunit != ''">#{workunit},</if>
+		<if test="homeaddress != null and homeaddress != ''">#{homeaddress},</if>
+		<if test="tel != null and tel != ''">#{tel},</if>
+		<if test="email != null and email != ''">#{email},</if>
+		<if test="remark != null and remark != ''">#{remark},</if>
+		<if test="createtime != null and createtime != ''">#{createtime}</if>
+		)
+	</insert>
+	
+	<delete id="deleteReaderByNumber" parameterType="String">
+		delete from reader
+		<where>
+		number=#{number}
+		</where>
+	</delete>
+	
+	<select id="queryReaderNumber" resultType="String">
+		select number from reader
+	</select>
+	
+	<select id="queryReaderTypeByNumber" parameterType="String" resultType="ReaderType">
+		select * from readertype where number = #{number}
+	</select>
+	
+	<select id="updateReaderTypeById" parameterType="ReaderType">
+	update readertype
+	<set>
+		<if test="name != null and name != ''">
+			name=#{name},
+		</if>
+		<if test="number != null and number != ''">
+			number=#{number},
+		</if>
+		<if test="borrownumber != null and borrownumber != ''">
+			borrownumber=#{borrownumber},
+		</if>
+		<if test="borrowterm != null and borrowterm != ''">
+			borrowterm=#{borrowterm},
+		</if>
+		<if test="remark != null and remark != ''">
+			remark=#{remark},
+		</if>
+	</set>
+	<where>
+		id=#{id}
+	</where>
+	</select>
+	
+	<insert id="addReaderType" parameterType="ReaderType">
+	insert into readertype(
+		<if test="name != null and name != ''">name,</if>
+		<if test="number != null and number != ''">number,</if>
+		<if test="borrownumber != null and borrownumber != ''">borrownumber,</if>
+		<if test="borrowterm != null and borrowterm != ''">borrowterm,</if>
+		<if test="remark != null and remark != ''">remark,</if>
+		<if test="createtime != null and createtime != ''">createtime</if>
+        ) 
+        values (
+		<if test="name != null and name != ''">#{name},</if>
+		<if test="number != null and number != ''">#{number},</if>
+		<if test="borrownumber != null and borrownumber != ''">#{borrownumber},</if>
+		<if test="borrowterm != null and borrowterm != ''">#{borrowterm},</if>
+		<if test="remark != null and remark != ''">#{remark}</if>
+		<if test="createtime != null and createtime != ''">#{createtime}</if>
+		)
+	</insert>
+	
+	<delete id="deleteReaderTypeByNumber" parameterType="String">
+		delete from readertype
+		<where>
+		number=#{number}
+		</where>
+	</delete>
+</mapper>

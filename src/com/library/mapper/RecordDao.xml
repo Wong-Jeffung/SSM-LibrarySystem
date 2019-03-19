@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.library.mapper.RecordDao">
+	<insert id="addRecord" parameterType="Record">
+		insert into record(
+			<if test="readerNumber != null and readerNumber != ''">readernumber,</if>
+			<if test="bookNumber != null and bookNumber != ''">booknumber,</if>
+			<if test="remark != null and remark != ''">remark,</if>
+			<if test="borrowDate != null and borrowDate != ''">borrowdate</if>
+			
+			) 
+			values (
+			<if test="readerNumber != null and readerNumber != ''">#{readerNumber},</if>
+			<if test="bookNumber != null and bookNumber != ''">#{bookNumber},</if>
+			<if test="remark != null and remark != ''">#{remark},</if>
+			<if test="borrowDate != null and borrowDate != ''">#{borrowDate}</if>
+			
+			)
+	</insert>
+	
+	<update id="setReturnDate">
+		update record set returndate = #{returnDate} where booknumber = #{bookNumber} 
+		and returndate is null;
+	</update>
+	
+	<select id="queryAllFullRecord" resultType="Record">
+		select * from record where returndate is not null order by id desc
+	</select>
+</mapper>

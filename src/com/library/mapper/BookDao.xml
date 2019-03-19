@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.library.mapper.BookDao">
+	<select id="queryBook" resultType="Book">
+		select * from book
+		<where>
+			<if test="name != null and name != ''">
+			name like "%"#{name}"%" 
+			</if>
+			<if test="type != null and type != ''">
+			and type = #{type} 
+			</if>
+			<if test="press != null and press != ''">
+			and press like "%"#{press}"%" 
+			</if>
+		</where>
+	</select>
+	
+	<select id="queryBookByNumber" parameterType="String" resultType="Book">
+		select * from book where number = #{number}
+	</select>
+	
+	<select id="queryAllBookType" resultType="BookType">
+		select * from booktype
+	</select>
+	
+	<select id="updateBookById" parameterType="Book">
+	update book
+	<set>
+		<if test="name != null and name != ''">
+			name=#{name},
+		</if>
+		<if test="type != null and type != ''">
+			type=#{type},
+		</if>
+		<if test="number != null and number != ''">
+			number=#{number},
+		</if>
+		<if test="author != null and author != ''">
+			author=#{author},
+		</if>
+		<if test="press != null and press != ''">
+			press=#{press},
+		</if>
+		<if test="publicationdate != null and publicationdate != ''">
+			publicationdate=#{publicationdate},
+		</if>
+		<if test="price != null and price != ''">
+			price=#{price},
+		</if>
+		<if test="pagecount != null and pagecount != ''">
+			pagecount=#{pagecount},
+		</if>
+		<if test="keyword != null and keyword != ''">
+			keyword=#{keyword},
+		</if>
+		<if test="remark != null and remark != ''">
+			remark=#{remark},
+		</if>
+	</set>
+	<where>
+		id=#{id}
+	</where>
+	</select>
+	
+	<insert id="addBook" parameterType="Book">
+	insert into book(
+		<if test="type != null and type != ''">type,</if>
+		<if test="name != null and name != ''">name,</if>
+		<if test="number != null and number != ''">number,</if>
+		<if test="author != null and author != ''">author,</if>
+		<if test="press != null and press != ''">press,</if>
+		<if test="publicationdate != null and publicationdate != ''">publicationdate,</if>
+		<if test="price != null and price != ''">price,</if>
+		<if test="pagecount != null and pagecount != ''">pagecount,</if>
+		<if test="keyword != null and keyword != ''">keyword,</if>
+		<if test="isborrow != null and isborrow != ''">isborrow,</if>
+		<if test="remark != null and remark != ''">remark,</if>
+		<if test="createtime != null and createtime != ''">createtime</if>
+        ) 
+        values (
+		<if test="type != null and type != ''">#{type},</if>
+		<if test="name != null and name != ''">#{name},</if>
+		<if test="number != null and number != ''">#{number},</if>
+		<if test="author != null and author != ''">#{author},</if>
+		<if test="press != null and press != ''">#{press},</if>
+		<if test="publicationdate != null and publicationdate != ''">#{publicationdate},</if>
+		<if test="price != null and price != ''">#{price},</if>
+		<if test="pagecount != null and pagecount != ''">#{pagecount},</if>
+		<if test="keyword != null and keyword != ''">#{keyword},</if>
+		<if test="isborrow != null and isborrow != ''">#{isborrow},</if>
+		<if test="remark != null and remark != ''">#{remark}</if>
+		<if test="createtime != null and createtime != ''">#{createtime}</if>
+		)
+	</insert>
+	
+	<delete id="deleteBookByNumber" parameterType="String">
+		delete from book
+		<where>
+		number=#{number}
+		</where>
+	</delete>
+	
+	<select id="queryBookNumber" resultType="String">
+		select number from book
+	</select>
+	
+	<select id="updateBookStatusByNumber">
+	update book set isborrow = #{isborrow}
+	<where>
+		number=#{number}
+	</where>
+	</select>
+	
+	
+	<select id="queryBookTypeByNumber" parameterType="String" resultType="BookType">
+		select * from booktype where number = #{number}
+	</select>
+	
+	<select id="updateBookTypeById" parameterType="BookType">
+	update booktype
+	<set>
+		<if test="name != null and name != ''">
+			name=#{name},
+		</if>
+		<if test="number != null and number != ''">
+			number=#{number},
+		</if>
+		<if test="keyword != null and keyword != ''">
+			keyword=#{keyword},
+		</if>
+		<if test="remark != null and remark != ''">
+			remark=#{remark},
+		</if>
+	</set>
+	<where>
+		id=#{id}
+	</where>
+	</select>
+	
+	<insert id="addBookType" parameterType="BookType">
+	insert into booktype(
+		<if test="name != null and name != ''">name,</if>
+		<if test="number != null and number != ''">number,</if>
+		<if test="keyword != null and keyword != ''">keyword,</if>
+		<if test="remark != null and remark != ''">remark,</if>
+		<if test="createtime != null and createtime != ''">createtime</if>
+        ) 
+        values (
+		<if test="name != null and name != ''">#{name},</if>
+		<if test="number != null and number != ''">#{number},</if>
+		<if test="keyword != null and keyword != ''">#{keyword},</if>
+		<if test="remark != null and remark != ''">#{remark}</if>
+		<if test="createtime != null and createtime != ''">#{createtime}</if>
+		)
+	</insert>
+	
+	<delete id="deleteBookTypeByNumber" parameterType="String">
+		delete from booktype
+		<where>
+		number=#{number}
+		</where>
+	</delete>
+</mapper>
