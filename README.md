@@ -67,8 +67,3 @@ E-R图：
 ![1553007000550](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA2.jpg)
 
 ![1553007068017](https://github.com/Wong-Jeffung/img-folder/blob/master/library-imgs/%E5%8A%9F%E8%83%BD%E5%B1%95%E7%A4%BA3.jpg)
-
-
-### 心得体会
-
-作为数据库课程的课程设计，本次开发后端部分使用了Spring，SpringMVC和Mybatis三个框架搭建，前端部分使用Bootstrap框架进行设计布局，在开发整个系统的过程中，功能模块的实现思路并不难，比较难的是前后端的数据传输，经常出现后端接收不到前端数据，而前端数据解析不了后端数据的情况，最后采用JSON解析数据，使得开发更加流畅。
